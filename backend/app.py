@@ -2,11 +2,13 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 
 from db import get_connection
+from routes.login import bp as login_bp
 from routes.senhas import bp as senhas_bp
 
 app = Flask(__name__)
 CORS(app)
 app.register_blueprint(senhas_bp)
+app.register_blueprint(login_bp)
 
 
 @app.get("/api/saude")
