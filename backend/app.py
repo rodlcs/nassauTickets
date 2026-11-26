@@ -2,9 +2,11 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 
 from db import get_connection
+from routes.senhas import bp as senhas_bp
 
 app = Flask(__name__)
 CORS(app)
+app.register_blueprint(senhas_bp)
 
 
 @app.get("/api/saude")
@@ -19,7 +21,6 @@ def saude():
         conn.close()
         return jsonify({"status": "ok", "banco": "conectado", "tipos_de_senha": total})
     except Exception:
-        # Detalhes só no log do servidor; o cliente recebe uma resposta genérica.
         app.logger.exception("Falha ao consultar o banco")
         return jsonify({"status": "erro", "banco": "indisponivel"}), 503
 
