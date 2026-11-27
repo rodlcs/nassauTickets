@@ -4,6 +4,7 @@ from flask_cors import CORS
 from db import get_connection
 from routes.atendimento import bp as atendimento_bp
 from routes.chamadas import bp as chamadas_bp
+from routes.expediente import bp as expediente_bp
 from routes.login import bp as login_bp
 from routes.senhas import bp as senhas_bp
 
@@ -13,6 +14,7 @@ app.register_blueprint(senhas_bp)
 app.register_blueprint(login_bp)
 app.register_blueprint(atendimento_bp)
 app.register_blueprint(chamadas_bp)
+app.register_blueprint(expediente_bp)
 
 
 @app.get("/api/saude")

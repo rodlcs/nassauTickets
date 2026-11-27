@@ -1,11 +1,13 @@
 from flask import Blueprint, current_app, jsonify, request
 
+from services.expediente import exige_expediente
 from services.senhas import TipoInvalido, emitir_senha
 
 bp = Blueprint("senhas", __name__, url_prefix="/api/senhas")
 
 
 @bp.post("")
+@exige_expediente
 def criar():
     """Emite uma nova senha. Corpo esperado: {"tipo": "SP" | "SG" | "SE"}."""
     dados = request.get_json(silent=True) or {}
