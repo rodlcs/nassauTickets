@@ -1,0 +1,142 @@
+.relatorios {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #0b2545;
+  color: #ffffff;
+}
+
+.relatorios h1,
+.relatorios h2,
+.relatorios p {
+  margin: 0;
+}
+
+.relatorios__topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.relatorios__menu {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.relatorios__link,
+.relatorios__sair {
+  padding: 0.6rem 1.4rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: 3px solid #ffffff;
+  border-radius: 0.75rem;
+  background: transparent;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.relatorios__link:hover,
+.relatorios__link:focus-visible,
+.relatorios__sair:hover,
+.relatorios__sair:focus-visible {
+  background: #ffd166;
+  border-color: #ffd166;
+  color: #0b2545;
+}
+
+.relatorios__filtros {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.relatorios__filtros label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.relatorios__filtros select,
+.relatorios__filtros input {
+  padding: 0.6rem;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  border: 2px solid #ffffff;
+}
+
+.relatorios__estado {
+  font-size: 1.3rem;
+}
+
+.relatorios__erro {
+  padding: 0.9rem 1.2rem;
+  border-radius: 0.75rem;
+  background: #ffd6d6;
+  color: #7a0000;
+  font-size: 1.2rem;
+}
+
+.relatorios__bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: #ffffff;
+  color: #0b2545;
+}
+
+.relatorios__resumo {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1rem;
+}
+
+.relatorios__resumo div {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: #e8eef7;
+}
+
+.relatorios__resumo dt {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.relatorios__resumo dd {
+  margin: 0.25rem 0 0;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.relatorios__tabela {
+  overflow-x: auto;
+}
+
+.relatorios table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.relatorios th,
+.relatorios td {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid #c5d0e0;
+  white-space: nowrap;
+}
+
+.relatorios th {
+  background: #0b2545;
+  color: #ffffff;
+}

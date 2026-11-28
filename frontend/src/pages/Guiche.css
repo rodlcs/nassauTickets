@@ -117,3 +117,24 @@
   color: #0b2545;
   cursor: pointer;
 }
+.guiche__menu {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.guiche__link {
+  padding: 0.6rem 1.4rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: 3px solid #ffd166;
+  border-radius: 0.75rem;
+  color: #ffd166;
+  text-decoration: none;
+}
+
+.guiche__link:hover,
+.guiche__link:focus-visible {
+  background: #ffd166;
+  color: #0b2545;
+}

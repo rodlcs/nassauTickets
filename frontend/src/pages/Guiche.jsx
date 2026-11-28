@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useAuth } from '../auth/contexto'
 import { api } from '../services/api'
 import './Guiche.css'
@@ -102,9 +103,16 @@ export default function Guiche() {
             {sessao.usuario.nome} ({sessao.usuario.perfil === 'GESTOR' ? 'gestor' : 'atendente'})
           </p>
         </div>
-        <button className="guiche__sair" onClick={sair}>
-          Sair
-        </button>
+                <div className="guiche__menu">
+          {sessao.usuario.perfil === 'GESTOR' && (
+            <Link className="guiche__link" to="/relatorios">
+              Relatórios
+            </Link>
+          )}
+          <button className="guiche__sair" onClick={sair}>
+            Sair
+          </button>
+        </div>
       </header>
 
       {erro && (

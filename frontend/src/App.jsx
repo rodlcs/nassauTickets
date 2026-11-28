@@ -3,6 +3,7 @@ import RotaProtegida from './components/RotaProtegida'
 import Guiche from './pages/Guiche'
 import Login from './pages/Login'
 import Painel from './pages/Painel'
+import Relatorios from './pages/Relatorios'
 import Totem from './pages/Totem'
 
 export default function App() {
@@ -16,6 +17,14 @@ export default function App() {
         element={
           <RotaProtegida>
             <Guiche />
+          </RotaProtegida>
+        }
+      />
+      <Route
+        path="/relatorios"
+        element={
+          <RotaProtegida perfil="GESTOR">
+            <Relatorios />
           </RotaProtegida>
         }
       />
