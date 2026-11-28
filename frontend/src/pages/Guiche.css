@@ -1,0 +1,119 @@
+.guiche {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #0b2545;
+  color: #ffffff;
+}
+
+.guiche__topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.guiche h1,
+.guiche p {
+  margin: 0;
+}
+
+.guiche__sair {
+  padding: 0.6rem 1.4rem;
+  font-size: 1.1rem;
+  border: 3px solid #ffffff;
+  border-radius: 0.75rem;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.guiche__campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-width: 16rem;
+  font-size: 1.2rem;
+}
+
+.guiche__campo select {
+  padding: 0.6rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+}
+
+.guiche__erro,
+.guiche__aviso {
+  padding: 0.9rem 1.2rem;
+  border-radius: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.guiche__erro {
+  background: #ffd6d6;
+  color: #7a0000;
+}
+
+.guiche__aviso {
+  background: #d4f4dd;
+  color: #0b4d1a;
+}
+
+.guiche__principal {
+  align-self: flex-start;
+  padding: 1.5rem 3rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  border: 4px solid #ffffff;
+  border-radius: 1rem;
+  background: #ffd166;
+  color: #0b2545;
+  cursor: pointer;
+}
+
+.guiche__principal:disabled,
+.guiche__acoes button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.guiche__atual {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 2rem;
+  border: 4px solid #ffffff;
+  border-radius: 1.5rem;
+  background: #13315c;
+}
+
+.guiche__estado {
+  font-size: 1.4rem;
+  color: #ffd166;
+  font-weight: 700;
+}
+
+.guiche__numero {
+  font-size: 4.5rem;
+  letter-spacing: 0.08em;
+}
+
+.guiche__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.guiche__acoes button {
+  padding: 1rem 1.8rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border: 3px solid #ffffff;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  color: #0b2545;
+  cursor: pointer;
+}
