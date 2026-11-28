@@ -53,6 +53,27 @@ def nao_compareceu(usuario_id, senha_id):
     )
 
 
+def atendimento_atual(usuario_id):
+    """A senha que o atendente tem em aberto (chamada ou em atendimento), se houver."""
+    conn = get_connection()
+    try:
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute(
+            "SELECT s.id, s.numero, t.sigla AS tipo, s.estado, g.numero AS guiche "
+            "FROM atendimento a "
+            "JOIN senha s ON s.id = a.senha_id "
+            "JOIN tipo_senha t ON t.id = s.tipo_senha_id "
+            "JOIN guiche g ON g.id = a.guiche_id "
+            "WHERE a.usuario_id = %s "
+            "AND s.estado IN ('CHAMADA', 'CHAMADA_NOVAMENTE', 'EM_ATENDIMENTO') "
+            "ORDER BY a.id DESC LIMIT 1",
+            (usuario_id,),
+        )
+        return cursor.fetchone()
+    finally:
+        conn.close()
+
+
 def painel(limite=5):
     """As últimas senhas chamadas hoje, da mais recente para a mais antiga."""
     conn = get_connection()

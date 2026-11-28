@@ -20,6 +20,18 @@ def _executar(acao, senha_id):
     return jsonify(resultado)
 
 
+@bp.get("/atendimentos/atual")
+@requer_login()
+def atual():
+    """A senha em aberto do atendente logado (ou null), para retomar a tela."""
+    try:
+        senha = svc.atendimento_atual(g.usuario["id"])
+    except Exception:
+        current_app.logger.exception("Falha ao consultar atendimento atual")
+        return jsonify({"erro": "Serviço indisponível. Tente novamente."}), 503
+    return jsonify({"senha": senha})
+
+
 @bp.post("/atendimentos/<int:senha_id>/rechamar")
 @requer_login()
 def rechamar(senha_id):
